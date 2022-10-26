@@ -14,8 +14,8 @@ export const weatherService = async (lon, lat) => {
 
 export const weatherServiceByCityId = async (city, id) => {
   const cities = await findCitiesRep(city);
-  const cityInfo = cities.features.filter((e) => e.id === id);
-  const lon = cityInfo[0].geometry.coordinates[0];
-  const lat = cityInfo[0].geometry.coordinates[1];
+  const cityInfo = cities.features.find((e) => e.id === id);
+  const lon = cityInfo.geometry.coordinates[0];
+  const lat = cityInfo.geometry.coordinates[1];
   return weatherService(lon, lat);
 };

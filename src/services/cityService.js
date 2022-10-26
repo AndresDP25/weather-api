@@ -2,7 +2,6 @@ import { findCitiesRep } from "../repositories/cityRepository.js";
 
 export const findCities = async (city) => {
   const cities = await findCitiesRep(city);
-
   return cities.features.map((e) => {
     return {
       id: e.id,

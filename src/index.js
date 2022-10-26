@@ -8,6 +8,7 @@ import morgan from "morgan";
 import weather from "./routes/weather.js";
 import cities from "./routes/cities.js";
 import status from "./routes/status.js";
+import { errorMiddleware } from "./middleware/error.js";
 
 const app = express();
 
@@ -24,6 +25,9 @@ app.use(PATH, swaggerUi.serve, swaggerUi.setup(spec));
 app.use("/weather", weather);
 app.use("/cities", cities);
 app.use("/status", status);
+
+//midlewares de errores
+app.use(errorMiddleware);
 
 //midlewares de errores
 // app.use((req, res, next) => {
