@@ -1,3 +1,4 @@
+#This is the weather API. With a location you can see the weather
 #clone project with
 git clone https://github.com/AndresDP25/weather-api.git
 #Install dependecies with
